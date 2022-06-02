@@ -1,0 +1,130 @@
+@import '../constants';
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #000000;
+	box-shadow: 0 5px rgba(0,0,0,.1);
+	padding:10px 7%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+
+	#menu-bar{
+		display: none;
+	}
+	label{
+		font-size:20px;
+		color: $default-color;
+		cursor: pointer;
+		display: none;
+	}
+
+	.logo{
+		.logoandtitle{
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			img{
+				width: 100%;
+				height:70px;
+				animation: rotation 4s infinite linear;
+			}
+			span{
+				color: $default-color;
+			}
+			h2{
+				color: $default-color;
+			}
+		}
+	}
+	.navbar{
+		ul{
+			list-style-type: none;
+			li{
+				position: relative;
+				float: left;
+				a{
+					font-size:20px;
+					padding: 20px;
+					color:$default-color;
+					display: block;
+					transition: 1s ease;
+					// &:hover{
+					// 	border-radius: 10px;
+					// 	background-color: #333;
+					// 	// color: #fff;
+					// }
+				}
+				ul{
+					position: absolute;
+					left: 0;
+					width: 200px;
+					background-color: #000;
+					display: none;
+					li{
+						width: 100%;
+						border-top: 1px solid rgba(0,0,0,.1);
+						ul{
+							left: 200px;
+							top: 0;
+						}
+					}
+				}
+				&:focus-within > ul ,&:hover > ul{
+					display: initial;
+
+				}
+			}
+		}
+	}
+}
+
+// media query
+@media(max-width: 991px){
+	header{
+		padding:20px;
+		label{
+			display: initial;
+		}
+		.navbar{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background-color: #000;
+			border-top: 1px solid rgba(0,0,0,.1);
+			display:none;
+			ul{
+				li{
+					width: 100%;
+					ul{
+						position: relative;
+						width: 100%;
+						li{
+							background-color: rgb(255, 255, 255);
+							ul{
+								width: 100%;
+								left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+		#menu-bar:checked ~ .navbar{
+			display: initial;
+		}
+	}
+}
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}

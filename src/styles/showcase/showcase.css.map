@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACKA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,WAAW,EAAE,4BAA4B;EACzC,eAAe,EAAE,IAAI;CACxB;;AACD,AAAA,IAAI,CAAA;EACA,UAAU,EAAE,MAAM;CAUrB;;ADrBD,AAAA,gBAAgB,CAAA;EACZ,KAAK,EAAC,IAAI;CAIb;;AALD,AAEI,gBAFY,CAEZ,KAAK,CAAA;EACD,KAAK,EAAC,IAAI;CACb",
+    "sources": [
+        "showcase.scss",
+        "../_constants.scss"
+    ],
+    "names": [],
+    "file": "showcase.css"
+}
