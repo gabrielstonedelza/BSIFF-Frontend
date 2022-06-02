@@ -55,7 +55,7 @@ header .logo .logoandtitle {
 
 header .logo .logoandtitle img {
   width: 100%;
-  height: 70px;
+  height: 100%;
   -webkit-animation: rotation 4s infinite linear;
           animation: rotation 4s infinite linear;
 }
@@ -178,7 +178,7 @@ header .navbar ul li:hover > ul {
   }
   header .logo .logoandtitle img {
     width: 100%;
-    height: 30px;
+    height: auto;
     -webkit-animation: rotation 4s infinite linear;
             animation: rotation 4s infinite linear;
   }
