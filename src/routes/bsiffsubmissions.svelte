@@ -166,7 +166,7 @@
 					letter-spacing: 0.011em;
 					font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 						sans-serif;
-						color: #86868b;
+					color: #86868b;
 				}
 			}
 		}
@@ -178,7 +178,7 @@
 			letter-spacing: 0.011em;
 			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 				sans-serif;
-				color: #86868b;
+			color: #86868b;
 		}
 		h4 {
 			padding: 20px;
@@ -206,6 +206,18 @@
 			background-color: #c8a461;
 			color: #000;
 			border-radius: 24px;
+			margin-left: 40px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.submissions {
+	
+			margin: 0 auto;
+			max-width: 980px;
+			padding: 0 22px;
+			padding-left: max(22px, env(safe-area-inset-left));
+			padding-right: max(22px, env(safe-area-inset-right));
 		}
 	}
 </style>

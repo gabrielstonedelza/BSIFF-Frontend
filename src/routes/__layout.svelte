@@ -4,6 +4,9 @@
 	import cssStyles from '../styles/header/header.css';
 	import aboutStyles from '../styles/AboutBsiff.css';
 	let active = false;
+	function closeMenu(){
+
+	}
 </script>
 
 <header>
@@ -18,8 +21,6 @@
 	<label for="menu-bar">Menu</label>
 	<nav class="navbar">
 		<ul>
-			<!-- <li><a href="">Home</a></li>
-			<li><a href="">About</a></li> -->
 			<li>
 				<a href="#">BSIFF 2022 </a>
 				<ul>

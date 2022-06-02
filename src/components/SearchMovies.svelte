@@ -31,7 +31,7 @@
 		width: 30%;
 		margin: 1rem;
 	}
-	button {
+	/* button {
 		font-size: 0.7rem;
 		padding: 0rem 1rem;
 		background: rgba(96, 110, 201);
@@ -46,7 +46,7 @@
 		border-top-right-radius: 10px;
 		border-bottom-right-radius: 10px;
 		cursor: pointer;
-	}
+	} */
 	input {
 		width: 100%;
 		padding: 12px;

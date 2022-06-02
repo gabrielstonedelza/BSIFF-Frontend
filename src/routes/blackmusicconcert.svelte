@@ -33,7 +33,7 @@ out:fly={{ duration: 500 }}>
 		Darko Vibes, Asi Renie, Ria Boss, Essilfie, Beryl, Dedeba, Sefa, ToluDadi
 	</p>
 	<br />
-	<a href="#" class="btn">WATCH CONCERT VIDEOS HERE </a>
+	<a href="https://www.youtube.com/channel/UCyTMomHPU4760bOoq2ycgkg" class="btn" target="_blank">WATCH CONCERT VIDEOS HERE </a>
 </section>
 
 <style lang="scss">

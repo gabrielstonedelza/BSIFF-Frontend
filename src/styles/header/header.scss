@@ -53,11 +53,6 @@ header {
 					color: $default-color;
 					display: block;
 					transition: 1s ease;
-					// &:hover{
-					// 	border-radius: 10px;
-					// 	background-color: #333;
-					// 	// color: #fff;
-					// }
 				}
 				ul {
 					position: absolute;
@@ -74,7 +69,6 @@ header {
 						}
 					}
 				}
-				&:focus-within > ul,
 				&:hover > ul {
 					display: initial;
 				}
