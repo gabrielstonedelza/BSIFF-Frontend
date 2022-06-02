@@ -1,6 +1,7 @@
 <script>
 	import Logo from '../assets/images/logo-1.png';
 	import cssStyles from '../styles/header/header.css';
+	import aboutStyles from '../styles/AboutBsiff.css';
 </script>
 
 <header>

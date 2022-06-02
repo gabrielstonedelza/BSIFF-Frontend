@@ -1,8 +1,13 @@
+<script>
+	// import cssStyles from '../styles/AboutBsiff.css';
+	import { fly } from 'svelte/transition';
+</script>
 <svelte:head>
 	<title>BSIFF | BSIFF EDU</title>
 </svelte:head>
 
-<section>
+<section class="eduproject" id="edu-project" in:fly={{ y: 50, duration: 500, delay: 500 }}
+out:fly={{ duration: 500 }}>
 	<h2>BSIFF EDU Projects</h2>
 	<p>
 		BSIFF EDU is committed to inspiring a generation of African filmmakers. Our aim is to provide
@@ -56,7 +61,45 @@
 		Participants will undergo a short but intensive virtual/physical workshop with mentors and then
 		they would be required to submit a script under a theme.
 	</p>
-    <p>
-        The best script will win a cash prize during the film festival in September.  With the support of partners, we will help the winner develop their story into a short film. The  short film will be shown at the Black Star International Film Festival as a Special PAtv-BSIFF segment and on other relevant channels.
-    </p>
+	<p>
+		The best script will win a cash prize during the film festival in September. With the support of
+		partners, we will help the winner develop their story into a short film. The short film will be
+		shown at the Black Star International Film Festival as a Special PAtv-BSIFF segment and on other
+		relevant channels.
+	</p>
 </section>
+
+<style lang="scss">
+	#edu-project {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid var(--footer-border-color);
+		padding: 17px 0 11px;
+	}
+	.eduproject {
+		margin: 0 auto;
+		max-width: 980px;
+		padding: 0 22px;
+		padding-left: max(22px, env(safe-area-inset-left));
+		padding-right: max(22px, env(safe-area-inset-right));
+		p {
+			font-size: 21px;
+			line-height: 1.381;
+			font-weight: 400;
+			letter-spacing: 0.011em;
+			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
+				sans-serif;
+				color: #86868b;
+		}
+		h2 {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			font-size: 28px;
+			line-height: 1.08349;
+			font-weight: 600;
+			letter-spacing: -0.003em;
+			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
+				sans-serif;
+		}
+	}
+</style>

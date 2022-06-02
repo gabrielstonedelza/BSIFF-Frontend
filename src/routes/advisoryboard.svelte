@@ -1,8 +1,13 @@
+<script>
+	// import cssStyles from '../styles/AboutBsiff.css';
+	import { fly } from 'svelte/transition';
+</script>
 <svelte:head>
 	<title>BSIFF | Advisoryboard</title>
 </svelte:head>
 
-<section class="adviceboard">
+<section class="adviceboard" id="adviceboard-container" in:fly={{ y: 50, duration: 500, delay: 500 }}
+out:fly={{ duration: 500 }}>
 	<h2>HELGA-LIZ HABERFELLNER (WRITER, PRODUCER, DIRECTOR - TEACHER)</h2>
 	<p>
 		Helga has spent more than 30years in the Canadian film and TV industry as both a filmmaker and a
@@ -85,3 +90,42 @@
         He is also a member of Calgary Society of Independent Filmmakers (CSIF), holds a permit with IATSE Local 212. Nico is also the Lead Production Executive with the Canada University Shooting Federation (CUSF) and also serves with The Gold-Mind Project as media producer among other organizations in Canada & Africa. In addition, he serves as board member for Chengeto Africa, a Southern African based non-profit, that utilizes Media as a form to advocate for women & girl child rights.
     </p>
 </section>
+
+
+<style lang="scss">
+	#adviceboard-container {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid var(--footer-border-color);
+		padding: 17px 0 11px;
+	}
+	.adviceboard{
+		margin: 0 auto;
+		max-width: 980px;
+		padding: 0 22px;
+		padding-left: max(22px, env(safe-area-inset-left));
+		padding-right: max(22px, env(safe-area-inset-right));
+
+		p {
+			font-size: 21px;
+			line-height: 1.381;
+			font-weight: 400;
+			letter-spacing: 0.011em;
+			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
+				sans-serif;
+				color: #86868b;
+		}
+		h2{
+			padding-top: 20px;
+			padding-bottom: 20px;
+			font-size: 28px;
+			line-height: 1.08349;
+			font-weight: 600;
+			letter-spacing: -0.003em;
+			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
+				sans-serif;
+		}
+	}
+
+
+</style>

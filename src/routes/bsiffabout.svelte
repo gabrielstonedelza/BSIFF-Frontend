@@ -1,12 +1,13 @@
 <script>
-	import cssStyles from '../styles/AboutBsiff.css';
+	// import cssStyles from '../styles/AboutBsiff.css';
+	import { fly } from 'svelte/transition';
 </script>
 
 <svelte:head>
 	<title>BSIFF | About BSIFF</title>
 </svelte:head>
 
-<section class="aboutbsiffcontainer">
+<section class="aboutbsiffcontainer" in:fly={{ y: 50, duration: 500,delay: 500 }} out:fly={{ duration: 500 }}>
 	<!-- heading -->
 	<h2>SAVE THE DATE: SEPTEMBER 20-24TH,2022</h2>
 	<p>
