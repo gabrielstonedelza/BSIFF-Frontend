@@ -90,11 +90,10 @@ out:fly={{ duration: 500 }}>
 			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 				sans-serif;
 				color: #86868b;
+				padding: 20px;
 		}
 		h2 {
-			padding-top: 20px;
-			padding-bottom: 20px;
-			font-size: 28px;
+			padding: 20px;
 			line-height: 1.08349;
 			font-weight: 600;
 			letter-spacing: -0.003em;

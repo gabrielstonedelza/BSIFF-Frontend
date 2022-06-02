@@ -7,8 +7,12 @@
 	<title>BSIFF | Who we are</title>
 </svelte:head>
 
-<section class="whoweare" id="whowearecontainer" in:fly={{ y: 50, duration: 500, delay: 500 }}
-out:fly={{ duration: 500 }}>
+<section
+	class="whoweare"
+	id="whowearecontainer"
+	in:fly={{ y: 50, duration: 500, delay: 500 }}
+	out:fly={{ duration: 500 }}
+>
 	<h3>
 		THE BLACK STAR INTERNATIONAL FILM FESTIVAL (BSIFF) IS A MOVEMENT OF CHANGE MAKERS INSPIRING THE
 		BUSINESS OF FILM
@@ -60,9 +64,8 @@ out:fly={{ duration: 500 }}>
 		padding-left: max(22px, env(safe-area-inset-left));
 		padding-right: max(22px, env(safe-area-inset-right));
 
-        h3 {
-			padding-top: 20px;
-			padding-bottom: 20px;
+		h3 {
+			padding: 20px;
 			font-size: 28px;
 			line-height: 1.08349;
 			font-weight: 600;
@@ -70,7 +73,7 @@ out:fly={{ duration: 500 }}>
 			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 				sans-serif;
 		}
-        ul {
+		ul {
 			list-style-type: none;
 			margin: 0;
 			padding: 0 17px;
@@ -88,7 +91,8 @@ out:fly={{ duration: 500 }}>
 					letter-spacing: 0.011em;
 					font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 						sans-serif;
-                        color: #86868b;
+					color: #86868b;
+					padding: 20px;
 				}
 			}
 		}
@@ -99,7 +103,8 @@ out:fly={{ duration: 500 }}>
 			letter-spacing: 0.011em;
 			font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 				sans-serif;
-                color: #86868b;
+			color: #86868b;
+			padding: 20px;
 		}
 	}
 </style>

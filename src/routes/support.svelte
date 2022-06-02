@@ -33,8 +33,7 @@ out:fly={{ duration: 500 }}>
 		padding-left: max(22px, env(safe-area-inset-left));
 		padding-right: max(22px, env(safe-area-inset-right));
 		h2 {
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding: 20px;
 			font-size: 28px;
 			line-height: 1.08349;
 			font-weight: 600;
@@ -62,6 +61,7 @@ out:fly={{ duration: 500 }}>
 					font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
 						sans-serif;
 						color: #86868b;
+						padding: 20px;
 				}
 			}
 		}

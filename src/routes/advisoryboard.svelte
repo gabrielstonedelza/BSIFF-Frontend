@@ -107,6 +107,7 @@ out:fly={{ duration: 500 }}>
 		padding-right: max(22px, env(safe-area-inset-right));
 
 		p {
+			padding: 20px;
 			font-size: 21px;
 			line-height: 1.381;
 			font-weight: 400;
@@ -116,8 +117,7 @@ out:fly={{ duration: 500 }}>
 				color: #86868b;
 		}
 		h2{
-			padding-top: 20px;
-			padding-bottom: 20px;
+			padding: 20px;
 			font-size: 28px;
 			line-height: 1.08349;
 			font-weight: 600;
