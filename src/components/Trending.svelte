@@ -1,6 +1,6 @@
 <script>
 	export let movies;
-    import TrendingCard from '../components/TrendingCard.svelte'
+	import TrendingCard from '../components/TrendingCard.svelte';
 </script>
 
 <h3>Official Selection</h3>
@@ -13,7 +13,15 @@
 
 <style>
 	h3 {
-		padding: 0 1rem;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		font-size: 28px;
+		line-height: 1.08349;
+		font-weight: 600;
+		letter-spacing: -0.003em;
+		font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial',
+			sans-serif;
 	}
 	.popular-movies {
 		display: grid;
