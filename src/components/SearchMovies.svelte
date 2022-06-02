@@ -20,9 +20,9 @@
 		bind:value={inputValue}
 		class={active ? 'selected' : ''}
 	/>
-	{#if inputValue}
+	<!-- {#if inputValue}
 		<button in:fly={{ x: 10, duration: 500 }} out:fly={{ x: 10, duration: 500 }}>Search</button>
-	{/if}
+	{/if} -->
 </form>
 
 <style>
@@ -49,19 +49,25 @@
 	}
 	input {
 		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		box-sizing: border-box;
+		resize: vertical;
+		/* width: 100%;
+		color: rgba(255, 255, 255);
+		border-radius: 10px;
 		border: none;
 		font-size: 1rem;
 		font-family: 'Courier New', Courier, monospace;
 		outline: none;
-		color: rgba(255, 255, 255);
 		padding: 0.5rem 0.1rem;
 		transition: background 0.75s ease-out;
 		font-weight: bold;
 		background-color: rgba(63, 63, 63);
-		border-radius: 10px;
-		padding: 1rem;
+		padding: 1rem; */
 	}
-	input.selected {
+	/* input.selected {
 		background: rgb(0, 0, 0);
-	}
+	} */
 </style>
