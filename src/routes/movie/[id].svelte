@@ -71,6 +71,7 @@
 	}
 	.movie-details {
 		margin: 2rem 20%;
+		padding-top: 40px;
 	}
 	span {
 		font-weight: bold;

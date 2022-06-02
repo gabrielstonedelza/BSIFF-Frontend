@@ -14,7 +14,7 @@
 <style>
 	h3 {
 		text-align: center;
-		padding-top: 20px;
+		padding-top: 50px;
 		padding-bottom: 20px;
 		font-size: 28px;
 		line-height: 1.08349;
