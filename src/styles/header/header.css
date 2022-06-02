@@ -55,7 +55,7 @@ header .logo .logoandtitle {
 
 header .logo .logoandtitle img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-animation: rotation 4s infinite linear;
           animation: rotation 4s infinite linear;
 }
@@ -202,13 +202,11 @@ header .navbar ul li:hover > ul {
     gap: 1rem;
   }
   header .logo .logoandtitle img {
-    width: 100%;
-    height: 20px;
-    -webkit-animation: rotation 4s infinite linear;
-            animation: rotation 4s infinite linear;
+    display: none;
   }
   header .logo .logoandtitle span {
     color: #c8a461;
+    display: none;
   }
   header .logo .logoandtitle h2 {
     color: #c8a461;
