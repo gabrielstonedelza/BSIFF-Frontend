@@ -11,6 +11,9 @@
 
 <header>
 	<a href="/" class="logo">
+		<div class="header1">
+			<h6>BSIFF 2022: September 20 -24 | Accra, Ghana</h6>
+		</div>
 		<div class="logoandtitle">
 			<img src={Logo} alt="" />
 			<span>|</span>
@@ -68,7 +71,7 @@
 					</li>
 				</ul>
 			</li>
-			<li><a href="/becomemember">Become a Member</a></li>
+			<li><a href="/becomemember">Join</a></li>
 
 			<li><a href="/donate">Donate</a></li>
 			<li><a href="/register">Register</a></li>
