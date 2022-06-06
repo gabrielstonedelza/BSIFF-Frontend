@@ -1,6 +1,6 @@
 <script>
 	// import cssStyles from '../styles/AboutBsiff.css';
-	import { fly } from 'svelte/transition';
+	
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 	id="about"
 >
 	<!-- heading -->
-	<h2>SAVE THE DATE: SEPTEMBER 20-24TH,2022</h2>
+	<h2>SAVE THE DATE: SEPTEMBER 20-25TH,2022</h2>
 	<p>
 		The Black Star International Film Festival returns in September 2022 for its 7th edition under
 		the theme, “Inspiring the Business of Film in Africa” - 4 days of celebrating international and
@@ -59,7 +59,7 @@
 				sans-serif;
 			color: #86868b;
 		}
-		.btn{
+		.btn {
 			// display: flex;
 			// justify-content: center;
 			padding-left: 20px;
@@ -69,7 +69,7 @@
 			background-color: #c8a461;
 			color: #000;
 			border-radius: 24px;
-			text-align:center;
+			text-align: center;
 		}
 	}
 </style>

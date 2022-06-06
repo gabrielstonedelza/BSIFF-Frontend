@@ -12,7 +12,7 @@
 <header>
 	<a href="/" class="logo">
 		<div class="header1">
-			<h6>BSIFF 2022: September 20 -24 | Accra, Ghana</h6>
+			<h6>BSIFF 2022: September 20 - 25 | Accra, Ghana</h6>
 		</div>
 		<div class="logoandtitle">
 			<img src={Logo} alt="" />
