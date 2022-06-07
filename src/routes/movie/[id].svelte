@@ -4,6 +4,7 @@
 			`https://api.themoviedb.org/3/movie/${params.id}?api_key=d419dbf4be6123fee9b42ce04438dc53&language=en-US`
 		);
 		const movieDetail = await res.json();
+		console.log(movieDetail);
 
 		if (res.ok) {
 			return {
@@ -12,6 +13,7 @@
 				}
 			};
 		}
+		return movieDetail;
 	}
 </script>
 
