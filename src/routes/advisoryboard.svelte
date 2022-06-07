@@ -1,10 +1,11 @@
 <script>
 	import { fly } from 'svelte/transition';
-	
+
 	import Apiorkor from '../assets/images/Apiorkor.png';
 	import KBoachie from '../assets/images/KofiBoachie.png';
 	import Helga from '../assets/images/Helga.png';
 	import Nico from '../assets/images/NicoAProfile.png';
+	import Farai from '../assets/images/farai.jpeg';
 </script>
 
 <svelte:head>
@@ -17,8 +18,8 @@
 	in:fly={{ y: 50, duration: 500, delay: 500 }}
 	out:fly={{ duration: 500 }}
 >
-<br />
-<br />
+	<br />
+	<br />
 	<div class="helga">
 		<div class="about">
 			<div class="about-poster">
@@ -135,6 +136,17 @@
 			</p>
 		</div>
 	</div>
+	<div class="farai">
+		<div class="about">
+			<div class="about-poster">
+				<img src={Farai} alt="" />
+				<h2>Farai Elton MJANANA</h2>
+			</div>
+			<p>
+				Writer and Director Farai has over 15 years experience in the industry with written work that has gone into production and publishing in Zimbabwe. On top of writing for Film with credits including the documentary film ‘Absolute Jiti: The Bhundu Boys’ Story (2007) and TV ‘The Team’ (2012), Farai written extensively for Radio and Theatre as well. His directing credits are mostly for theatre including working as Theatre Consultant for the Harare International Festival of the Arts (HIFA) for over ten years. Farai also served as Festival Director for the Zimbabwe International Film Festival for four years between 2013 -2016 editions. Farai currently lives and works in London, United Kingdom, where he has just completed a Certificate for the TV Series Bible Creation Course with the National Film and Television School. 
+			</p>
+		</div>
+	</div>
 </section>
 
 <style lang="scss">
@@ -153,7 +165,7 @@
 		.helga,
 		.apiorkor,
 		.kofi-boachie,
-		.nico {
+		.nico,.farai {
 			display: flex;
 			gap: 1rem;
 			flex-direction: column;

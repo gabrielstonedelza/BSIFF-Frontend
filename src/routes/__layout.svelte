@@ -41,7 +41,6 @@
 							<li><a href="/whoweare">Who We Are</a></li>
 							<li><a href="/advisoryboard">Advisory Board</a></li>
 							<li><a href="/squad">The Squad</a></li>
-							<li><a href="">Contact</a></li>
 						</ul>
 					</li>
 					<li>
