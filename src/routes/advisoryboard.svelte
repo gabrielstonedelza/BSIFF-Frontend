@@ -1,11 +1,6 @@
 <script>
 	import { fly } from 'svelte/transition';
-	import Florence from '../assets/images/Florence.png';
-	import Castro from '../assets/images/Castro.png';
-	import David from '../assets/images/David.png';
-	import Katinka from '../assets/images/Kantinka.png';
-	import Kelvin from '../assets/images/Kelvin.png';
-	import Naadede from '../assets/images/Naadede.png';
+	
 	import Apiorkor from '../assets/images/Apiorkor.png';
 	import KBoachie from '../assets/images/KofiBoachie.png';
 	import Helga from '../assets/images/Helga.png';

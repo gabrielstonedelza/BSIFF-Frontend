@@ -1,6 +1,12 @@
 <script>
 	// import cssStyles from '../styles/AboutBsiff.css';
 	import { fly } from 'svelte/transition';
+	import Florence from '../assets/images/Florence.png';
+	import Castro from '../assets/images/Castro.png';
+	import David from '../assets/images/David.png';
+	import Katinka from '../assets/images/Kantinka.png';
+	import Kelvin from '../assets/images/Kelvin.png';
+	import Naadede from '../assets/images/Naadede.png';
 </script>
 <svelte:head>
 	<title>BSIFF | The Squad</title>
