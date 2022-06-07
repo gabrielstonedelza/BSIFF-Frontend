@@ -1,6 +1,6 @@
 <script>
 	// import cssStyles from '../styles/AboutBsiff.css';
-	
+	import { fly } from 'svelte/transition';
 </script>
 
 <svelte:head>

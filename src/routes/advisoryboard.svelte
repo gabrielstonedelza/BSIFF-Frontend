@@ -4,7 +4,7 @@
 	import Apiorkor from '../assets/images/Apiorkor.png';
 	import KBoachie from '../assets/images/KofiBoachie.png';
 	import Helga from '../assets/images/Helga.png';
-	import Nico from '../assets/images/Nico.png';
+	import Nico from '../assets/images/NicoAProfile.png';
 </script>
 
 <svelte:head>
