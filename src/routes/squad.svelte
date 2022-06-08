@@ -67,7 +67,7 @@
 					<img src={Florence} alt="" />
 				</div>
 				<div class="details">
-					<h4>FLORENCE BOATENG</h4>
+					<h4>FLORENCE M. FOLI</h4>
 					<p>CONTENT WRITER</p>
 				</div>
 			</div>
