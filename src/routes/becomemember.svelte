@@ -3,16 +3,13 @@
 	import axios from 'axios';
 	import { goto } from '$app/navigation';
 
-	let hasErros = false;
-	let isSucceeded = false;
-	let notValidEmail = false;
+
 	let username = '';
 	let name = '';
 	let email = '';
 	let password1 = '';
 	let password2 = '';
-	let errorMessage = '';
-	let successMessage = '';
+
 	let nameError = '';
 	let hasNameError = false;
 	let userNameError = '';
