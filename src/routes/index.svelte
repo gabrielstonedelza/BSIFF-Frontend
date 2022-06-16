@@ -34,3 +34,4 @@
 	<SearchMovies />
 	<RamdomMovies movies={popular} />
 </section>
+
