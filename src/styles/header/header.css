@@ -104,6 +104,17 @@ header .navbar ul li a {
   display: block;
   -webkit-transition: 1s ease;
   transition: 1s ease;
+  cursor: pointer;
+}
+
+header .navbar ul li p {
+  font-size: 20px;
+  padding: 20px;
+  color: #c8a461;
+  display: block;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  cursor: pointer;
 }
 
 header .navbar ul li ul {

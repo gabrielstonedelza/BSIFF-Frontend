@@ -130,7 +130,7 @@
 		</li>
 	</ul>
 	<br />
-	<a href="/submit_film" target="_blank" class="btn">SUBMIT NOW</a>
+	<a href="/submit_film" class="btn">SUBMIT NOW</a>
 </section>
 
 <style lang="scss">

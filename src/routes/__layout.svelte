@@ -4,8 +4,16 @@
 	import cssStyles from '../styles/header/header.css';
 	import aboutStyles from '../styles/AboutBsiff.css';
 	let active = false;
-	function closeMenu(){
-
+	let menu_opened = false;
+	function toggleMenu(){
+		menu_opened = !menu_opened;
+		console.log("toggleMenu")
+	}
+	function handleMenuOpened(){
+		menu_opened = true;
+	}
+	function handleMenuClosed(){
+		menu_opened = false;
 	}
 </script>
 
@@ -20,37 +28,39 @@
 			<h2>BSIFF</h2>
 		</div>
 	</a>
-	<input type="checkbox" id="menu-bar" />
+	<input type="checkbox" id="menu-bar" on:click={toggleMenu}/>
 	<label for="menu-bar">Menu</label>
+	
 	<nav class="navbar">
 		<ul>
 			<li>
-				<a href="#">BSIFF 2022 </a>
+				<p>BSIFF 2022 </p>
 				<ul>
 					<li><a href="/bsiffabout">About</a></li>
-					<li><a href="/bsiffsubmissions">Submissions</a></li>
+					<li><a href="/bsiffsubmissions" on:click={() =>(active = false)}>Submissions</a></li>
 					<li><a href="/bsiffofficialselection">Official Selection</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="#">About </a>
+				<p>About </p>
 				<ul>
 					<li>
-						<a href="#">About BSIFF</a>
+						<p href="">About BSIFF</p>
 						<ul>
 							<li><a href="/whoweare">Who We Are</a></li>
 							<li><a href="/advisoryboard">Advisory Board</a></li>
 							<li><a href="/squad">The Squad</a></li>
+							<li><a href="/gallery">Gallery</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">Our Programming</a>
+						<p>Our Programming</p>
 						<ul>
 							<li>
 								<a href="/bsiffeduproject">Off-Peak Programs </a>
 							</li>
 							<li>
-								<a href="/bsiffpeakprograms">Peak Programs +</a>
+								<a href="/bsiffpeakprograms" on>Peak Programs +</a>
 								<ul>
 									<li>
 										<a href="/filmfestival">Film Festival</a>
@@ -73,9 +83,11 @@
 			<li><a href="/becomemember">Join</a></li>
 
 			<li><a href="/donate">Donate</a></li>
-			<li><a href="/register">Register</a></li>
+			<li><a href="/login">Login</a></li>
 		</ul>
 	</nav>
+
+	
 </header>
 <br />
 <br />

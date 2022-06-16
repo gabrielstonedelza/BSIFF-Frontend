@@ -12,6 +12,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@beyonk/svelte-notifications": "^4.2.0",
 		"@playwright/test": "^1.21.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
@@ -23,10 +24,13 @@
 		"prettier-plugin-svelte": "^2.5.0",
 		"sass": "^1.52.1",
 		"svelte": "^3.44.0",
+		"svelte-lightbox": "^0.6.2",
 		"svelte-preprocess": "^4.10.6"
 	},
 	"type": "module",
 	"dependencies": {
+		"axios": "^0.27.2",
+		"form-data": "^4.0.0",
 		"svelte-icons-pack": "^1.4.6"
 	}
 }

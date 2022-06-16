@@ -31,22 +31,7 @@
 		width: 30%;
 		margin: 1rem;
 	}
-	/* button {
-		font-size: 0.7rem;
-		padding: 0rem 1rem;
-		background: rgba(96, 110, 201);
-		color: white;
-		font-weight: bold;
-		border: none;
-		position: absolute;
-		bottom: 50%;
-		right: 0;
-		transform: translate(0, 50%);
-		height: 100%;
-		border-top-right-radius: 10px;
-		border-bottom-right-radius: 10px;
-		cursor: pointer;
-	} */
+
 	input {
 		width: 100%;
 		padding: 12px;
