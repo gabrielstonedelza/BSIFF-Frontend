@@ -104,7 +104,7 @@
 		bottom: 0;
 		right: 0;
 		overflow: hidden;
-		transition: 1s ease;
+		
 		button {
 			padding: 20px;
 			border: none;
@@ -152,6 +152,11 @@
 		}
 	}
 	// media query
+	@media(max-width:768px){
+		.modal{
+			display: none;
+		}
+	}
 	@media(max-width:500px){
 		.modal{
 			display: none;

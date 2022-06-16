@@ -8,9 +8,8 @@
 	let releaseDate;
 	let description;
 	const checkFile = (e) => {
-        
 		poster = e.target.files[0];
-    };
+	};
 
 	const handleSubmitFile = async () => {
 		const apiUrl = 'http://127.0.0.1:8000/submit_film/';
@@ -25,16 +24,18 @@
 				description: description
 			},
 			headers: { 'Content-Type': 'multipart/form-data' }
-		}).then((response) => {
-			goto('/');
-		}).catch((error) => {
-			if (error.response) {
-				console.log(error.response)
-                    // if (error.response.data["email"]) {
-                    //     toast.error(`${error.response.data["email"]}`);
-                    // }
-                }
 		})
+			.then((response) => {
+				goto('/');
+			})
+			.catch((error) => {
+				if (error.response) {
+					console.log(error.response);
+					// if (error.response.data["email"]) {
+					//     toast.error(`${error.response.data["email"]}`);
+					// }
+				}
+			});
 	};
 </script>
 
@@ -47,11 +48,19 @@
 	in:fly={{ y: 50, duration: 500, delay: 500 }}
 	out:fly={{ duration: 500 }}
 >
-	<form class="form"on:submit|preventDefault={handleSubmitFile}>
+	<form class="form" on:submit|preventDefault={handleSubmitFile}>
 		<h1 class="form__title">Submit Film</h1>
 
 		<div class="form__group">
-			<input type="text" id="title" class="form__input" placeholder="" autocomplete="off" bind:value={title} required/>
+			<input
+				type="text"
+				id="title"
+				class="form__input"
+				placeholder=""
+				autocomplete="off"
+				bind:value={title}
+				required
+			/>
 			<label for="title" class="form__label">Title</label>
 		</div>
 		<label for="categories" class="form__label">Categorie</label>
@@ -67,15 +76,39 @@
 			</select>
 		</div>
 		<div class="form__group">
-			<input type="file" id="poster" class="form__input" placeholder="" autocomplete="off" on:change={(e) =>checkFile(e)} required/>
+			<input
+				type="file"
+				id="poster"
+				class="form__input"
+				placeholder=""
+				autocomplete="off"
+				on:change={(e) => checkFile(e)}
+				required
+			/>
 			<label for="poster" class="form__label">Poster</label>
 		</div>
 		<div class="form__group">
-			<input type="text" id="release-date" class="form__input" placeholder="" autocomplete="off" bind:value={releaseDate} required/>
+			<input
+				type="text"
+				id="release-date"
+				class="form__input"
+				placeholder=""
+				autocomplete="off"
+				bind:value={releaseDate}
+				required
+			/>
 			<label for="release-date" class="form__label">Release Date</label>
 		</div>
 		<div class="form__group">
-			<input type="text" id="description" class="form__input" placeholder="" autocomplete="off" bind:value={description} required/>
+			<input
+				type="text"
+				id="description"
+				class="form__input"
+				placeholder=""
+				autocomplete="off"
+				bind:value={description}
+				required
+			/>
 			<label for="description" class="form__label">Description</label>
 		</div>
 
@@ -109,19 +142,20 @@
 	.submit-film {
 		font-family: monospace;
 		font-weight: 500;
-		width: 50%;
+
 		height: 100vh;
 		display: grid;
-		// justify-content: center;
+		justify-content: center;
 		align-items: center;
 		color: #c8a461;
 		padding: 20px;
 
 		.form {
-			width: 100%;
+			width: 60rem;
 			padding: 2rem;
 			border-radius: $radius;
 			background-color: $clr-bg;
+			transition: 1s ease;
 
 			.form__title {
 				margin-bottom: 1rem;
@@ -197,6 +231,35 @@
 				top: -0.5rem;
 				left: 0.8rem;
 				font-size: 0.8rem;
+			}
+		}
+	}
+
+	// media query
+	@media (max-width: 991px) {
+		.submit-film {
+			padding: 40px;
+			.form {
+				width: 45rem;
+				padding: 20px;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		.submit-film {
+			padding: 40px;
+			.form {
+				width: 35rem;
+				padding: 20px;
+			}
+		}
+	}
+	@media (max-width: 500px) {
+		.submit-film {
+			padding: 40px;
+			.form {
+				width: 25rem;
+				padding: 20px;
 			}
 		}
 	}
