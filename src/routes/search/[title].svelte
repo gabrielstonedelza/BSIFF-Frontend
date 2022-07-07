@@ -1,14 +1,15 @@
 <script context="module">
 	export async function load({ fetch,params }) {
 		const res = await fetch(
-			`https://api.themoviedb.org/3/search/movie?api_key=d419dbf4be6123fee9b42ce04438dc53&language=en-US&query=${params.id}&page=1&include_adult=false`
+			`http://127.0.0.1:8000/search_film?search=${params.title}`
 		);
 		const data = await res.json();
+		console.log(params);
 	
 		if (res.ok) {
 			return {
 				props: {
-					searchedMovie: data.results
+					searchedMovie: data
 				}
 			};
 		}

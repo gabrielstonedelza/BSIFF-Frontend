@@ -3,6 +3,8 @@
 	import Logo from '../assets/images/logo-1.png';
 	import cssStyles from '../styles/header/header.css';
 	import aboutStyles from '../styles/AboutBsiff.css';
+
+
 	let active = false;
 	let menu_opened = false;
 	function toggleMenu(){
@@ -38,7 +40,7 @@
 				<ul>
 					<li><a href="/bsiffabout">About</a></li>
 					<li><a href="/bsiffsubmissions" on:click={() =>(active = false)}>Submissions</a></li>
-					<li><a href="/bsiffofficialselection">Official Selection</a></li>
+					<!-- <li><a href="/bsiffofficialselection">Official Selection</a></li> -->
 				</ul>
 			</li>
 			<li>

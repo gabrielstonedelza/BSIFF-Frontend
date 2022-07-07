@@ -1,50 +1,27 @@
+
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('http://127.0.0.1:8000/get_gallery/');
+		const gallery = await res.json();
+	
+
+		if (res.ok) {
+			return {
+				props: {
+					gallery
+				}
+			};
+		}
+	}
+</script>
 <script>
 	import { fly } from 'svelte/transition';
-	import image1 from '../assets/images/gallery/IMG_0015-34.jpeg';
-	import image2 from '../assets/images/gallery/IMG_6093.jpeg';
-	import image3 from '../assets/images/gallery/IMG_9046.jpg';
-	import image4 from '../assets/images/gallery/IMG_9067.jpg';
-	import image5 from '../assets/images/gallery/IMG_9072.jpg';
-	import image6 from '../assets/images/gallery/JOIN BSIFF 2.jpeg';
-	import image7 from '../assets/images/gallery/JOIN BSIFF.jpg';
-	import image8 from '../assets/images/gallery/OFF PEAK 1.jpeg';
-	import image9 from '../assets/images/gallery/OFF PEAK 2.jpeg';
-	import image10 from '../assets/images/gallery/OFF PEAK 3.jpeg';
-	import image11 from '../assets/images/gallery/untitled-1373.jpeg';
-	import image12 from '../assets/images/gallery/untitled-1391.jpeg';
-	import image13 from '../assets/images/gallery/untitled-1427.jpeg';
-	import image14 from '../assets/images/gallery/untitled-1447.jpeg';
-	import image15 from '../assets/images/gallery/untitled-2024.jpeg';
-	import image16 from '../assets/images/gallery/untitled-2146.jpeg';
-	import image17 from '../assets/images/gallery/untitled-2245.jpeg';
-	import image18 from '../assets/images/gallery/VOLUNTEER WITH US.jpg';
-	import image19 from '../assets/images/gallery/WHO WE ARE.jpeg';
-	import image20 from '../assets/images/gallery/YG6A0451.jpg';
+
 
 	let imageModal = "";
 	let openModalImage = false;
-	let pics = [
-		image1,
-		image2,
-		image3,
-		image4,
-		image5,
-		image6,
-		image7,
-		image8,
-		image9,
-		image10,
-		image11,
-		image12,
-		image13,
-		image14,
-		image15,
-		image16,
-		image17,
-		image18,
-		image19,
-		image20
-	];
+	
+	export let gallery;
 
 	function closeModal() {
 		openModalImage = false;
@@ -77,9 +54,9 @@
 	<br />
 	<br />
 	<div class="gallery-box">
-		{#each pics as pic}
+		{#each gallery as pic}
 			<div class="box">
-				<img src={pic} alt="" on:click={(e) => openModal(pic)} />
+				<img src={pic.get_image} alt="" on:click={(e) => openModal(pic.get_image)} />
 			</div>
 		{/each}
 	</div>

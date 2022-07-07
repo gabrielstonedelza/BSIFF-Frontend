@@ -2,7 +2,6 @@
 	let inputValue = '';
 	let active = false;
 	import { goto } from '$app/navigation';
-	import { fly } from 'svelte/transition';
 
 	function submitSearch() {
 		goto('/search/' + inputValue);
@@ -20,9 +19,6 @@
 		bind:value={inputValue}
 		class={active ? 'selected' : ''}
 	/>
-	<!-- {#if inputValue}
-		<button in:fly={{ x: 10, duration: 500 }} out:fly={{ x: 10, duration: 500 }}>Search</button>
-	{/if} -->
 </form>
 
 <style>
@@ -39,20 +35,7 @@
 		border-radius: 10px;
 		box-sizing: border-box;
 		resize: vertical;
-		/* width: 100%;
-		color: rgba(255, 255, 255);
-		border-radius: 10px;
-		border: none;
-		font-size: 1rem;
-		font-family: 'Courier New', Courier, monospace;
-		outline: none;
-		padding: 0.5rem 0.1rem;
-		transition: background 0.75s ease-out;
-		font-weight: bold;
-		background-color: rgba(63, 63, 63);
-		padding: 1rem; */
+
 	}
-	/* input.selected {
-		background: rgb(0, 0, 0);
-	} */
+
 </style>

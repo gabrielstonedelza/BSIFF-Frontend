@@ -1,16 +1,18 @@
 <script context="module">
 	export async function load({ fetch }) {
-		const res = await fetch(
-			'https://api.themoviedb.org/3/movie/popular?api_key=d419dbf4be6123fee9b42ce04438dc53&language=en-US&page=1'
-		);
+		const res = await fetch('http://127.0.0.1:8000/get_all_submitted_film/');
 		const data = await res.json();
+	
 
 		if (res.ok) {
 			return {
 				props: {
-					popular: data.results
+					selectedFilm: data
 				}
 			};
+		}
+		else{
+			console.error
 		}
 	}
 </script>
@@ -20,7 +22,7 @@
 	import RamdomMovies from '../components/random.svelte';
 	import SearchMovies from '../components/SearchMovies.svelte';
 	import SocialMovies from '../components/SocialMedia.svelte';
-	export let popular;
+	export let selectedFilm;
 	import { fly } from 'svelte/transition';
 </script>
 
@@ -32,6 +34,6 @@
 	<SocialMovies />
 	<Showcase />
 	<SearchMovies />
-	<RamdomMovies movies={popular} />
+	<RamdomMovies movies={selectedFilm} />
 </section>
 
