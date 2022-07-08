@@ -1,7 +1,7 @@
 
 <script context="module">
 	export async function load({ fetch }) {
-		const res = await fetch('http://127.0.0.1:8000/get_gallery/');
+		const res = await fetch('https://rvci.xyz/get_gallery/');
 		const gallery = await res.json();
 	
 
