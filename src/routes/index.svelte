@@ -1,6 +1,11 @@
 <script context="module">
 	export async function load({ fetch }) {
-		const res = await fetch('http://127.0.0.1:8000/get_all_submitted_film/');
+		const res = await fetch('http://127.0.0.1:8000/get_all_submitted_film/', {
+			headers: {
+				'content-type': 'application/json',
+				accept: 'application/json'
+			}
+		});
 		const data = await res.json();
 
 		if (res.ok) {
@@ -22,7 +27,6 @@
 	import SocialMovies from '../components/SocialMedia.svelte';
 	export let selectedFilm;
 	import { fly } from 'svelte/transition';
-	
 </script>
 
 <svelte:head>

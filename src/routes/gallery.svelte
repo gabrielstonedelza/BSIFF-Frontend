@@ -1,9 +1,12 @@
-
 <script context="module">
 	export async function load({ fetch }) {
-		const res = await fetch('https://rvci.xyz/get_gallery/');
+		const res = await fetch('https://rvci.xyz/get_gallery/', {
+			headers: {
+				'content-type': 'application/json',
+				accept: 'application/json'
+			}
+		});
 		const gallery = await res.json();
-	
 
 		if (res.ok) {
 			return {
@@ -14,13 +17,13 @@
 		}
 	}
 </script>
+
 <script>
 	import { fly } from 'svelte/transition';
 
-
-	let imageModal = "";
+	let imageModal = '';
 	let openModalImage = false;
-	
+
 	export let gallery;
 
 	function closeModal() {
@@ -70,7 +73,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	.modal {
 		width: 100%;
 		background-color: rgba(0, 0, 0, 0.829);
@@ -81,7 +84,7 @@
 		bottom: 0;
 		right: 0;
 		overflow: hidden;
-		
+
 		button {
 			padding: 20px;
 			border: none;
@@ -129,13 +132,13 @@
 		}
 	}
 	// media query
-	@media(max-width:768px){
-		.modal{
+	@media (max-width: 768px) {
+		.modal {
 			display: none;
 		}
 	}
-	@media(max-width:500px){
-		.modal{
+	@media (max-width: 500px) {
+		.modal {
 			display: none;
 		}
 	}
