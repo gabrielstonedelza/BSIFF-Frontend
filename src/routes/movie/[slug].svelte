@@ -1,6 +1,11 @@
 <script context="module">
 	export async function load({ fetch, params }) {
-		const res = await fetch(`http://127.0.0.1:8000/film_detail/${params.slug}/`);
+		const res = await fetch(`https://rvci.xyz/film_detail/${params.slug}/`, {
+			headers: {
+				'content-type': 'application/json',
+				accept: 'application/json'
+			}
+		});
 		const movieDetail = await res.json();
 
 		if (res.ok) {
@@ -56,7 +61,7 @@
 				height="80%"
 				oncontextmenu="return false;"
 			>
-			<source src={movieDetail.get_movie_trailer} type="video/mp4" />
+				<source src={movieDetail.get_movie_trailer} type="video/mp4" />
 				<!-- {#if screeningDays.includes(7)}
 					<source src={movieDetail.get_full_movie} type="video/mp4" />
 				{:else}
