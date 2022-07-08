@@ -26,9 +26,6 @@
 	.description {
 		height: 5vh;
 	}
-	p {
-		font-size: 0.7rem;
-	}
 	.movie-card {
 		width:270px;
 		display: flex;

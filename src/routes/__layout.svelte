@@ -3,6 +3,7 @@
 	import Logo from '../assets/images/logo-1.png';
 	import cssStyles from '../styles/header/header.css';
 	import aboutStyles from '../styles/AboutBsiff.css';
+	import 'animate.css';
 
 
 	let active = false;
@@ -22,7 +23,7 @@
 <header>
 	<a href="/" class="logo">
 		<div class="header1">
-			<h6>BSIFF 2022: September 20 - 25 | Accra, Ghana</h6>
+			<h6>BSIFF 2022: <span class="animate__animated animate__bounce animate__inifinite">September 20 - 25</span> | Accra, Ghana</h6>
 		</div>
 		<div class="logoandtitle">
 			<img src={Logo} alt="" />
@@ -84,9 +85,8 @@
 				</ul>
 			</li>
 			<li><a href="/becomemember">Join</a></li>
-
 			<li><a href="/donate">Donate</a></li>
-			<li><a href="/login">Login</a></li>
+			<li><a href="/tickets">Tickets</a></li>
 		</ul>
 	</nav>
 

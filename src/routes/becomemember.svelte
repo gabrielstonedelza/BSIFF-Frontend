@@ -3,64 +3,56 @@
 	import axios from 'axios';
 	import { goto } from '$app/navigation';
 
-
 	let username = '';
 	let name = '';
 	let email = '';
-	let password1 = '';
-	let password2 = '';
 
 	let nameError = '';
 	let hasNameError = false;
-	let userNameError = '';
-	let hasUserNameError = false;
 	let emailError = '';
 	let hasEmailError = false;
-	let passwordError = '';
-	let hasPasswordError = false;
-
+	let hasErrors = '';
+	const handleErrorContainer = () => {
+		hasErrors = false;
+	};
 
 	const handleSubmitForm = async (e) => {
-		const apiUrl = 'http://127.0.0.1:8000/auth/users/';
+		const apiUrl = 'http://127.0.0.1:8000/join_bsiff/';
 		axios({
 			method: 'POST',
 			url: apiUrl,
 			data: {
-				username: username,
 				full_name: name,
-				email: email,
-				password: password1,
-				re_password: password2
+				email: email
 			},
 			headers: { 'Content-Type': 'multipart/form-data' }
 		})
 			.then(function (response) {
-				goto('/login/');
-
+				goto('/join_success');
 			})
 			.catch((error) => {
 				if (error.response) {
-					if (error.response.data['username']) {
-						hasUserNameError = true;
-						userNameError = `Sorry 😢,${error.response.data['username']}`;
-					}
 					if (error.response.data['full_name']) {
+						hasErrors = true;
 						hasNameError = true;
 						nameError = `Sorry 😢,${error.response.data['full_name']}`;
 					}
-				
+					if (!error.response.data['full_name']) {
+						hasEmailError = false;
+						nameError = '';
+					}
+
 					if (error.response.data['email']) {
+						hasErrors = true;
 						hasEmailError = true;
 						emailError = `Sorry 😢,${error.response.data['email']}`;
 					}
-					if (error.response.data['password']) {
-						hasPasswordError = true;
-						passwordError = `Sorry 😢,${error.response.data['password']}`;
+					if (!error.response.data['email']) {
+						hasEmailError = false;
+						emailError = '';
 					}
-					
 				}
-				console.log(error.response)
-				
+				console.log(error.response);
 			});
 	};
 </script>
@@ -98,6 +90,21 @@
 	<div class="benefits" />
 	<!-- join form -->
 	<div class="join-now">
+		{#if hasErrors}
+			<div class="error-container">
+				<div class="error-box">
+					<div class="errors">
+						{#if hasNameError}
+							<h3>FullName: {nameError}</h3>
+						{/if}
+						{#if hasEmailError}
+							<h3>Email: {emailError}</h3>
+						{/if}
+					</div>
+					<p on:click={handleErrorContainer}>X</p>
+				</div>
+			</div>
+		{/if}
 		<form class="form" on:submit|preventDefault={handleSubmitForm}>
 			<div class="heading">
 				<h1 class="form__title">Join Now</h1>
@@ -110,33 +117,12 @@
 					class="form__input"
 					placeholder=""
 					autocomplete="off"
-					bind:value={username}
-					required
-				/>
-				<label for="name" class="form__label">Username</label>
-			</div>
-			{#if hasUserNameError}
-				<div class="full_error">
-					<p>{userNameError}</p>
-				</div>
-			{/if}
-			<div class="form__group">
-				<input
-					type="text"
-					id="name"
-					class="form__input"
-					placeholder=""
-					autocomplete="off"
 					bind:value={name}
 					required
 				/>
-				<label for="name" class="form__label">Name</label>
+				<label for="name" class="form__label">FullName</label>
 			</div>
-			{#if hasNameError}
-				<div class="full_error">
-					<p>{nameError}</p>
-				</div>
-			{/if}
+
 			<div class="form__group">
 				<input
 					type="text"
@@ -149,29 +135,7 @@
 				/>
 				<label for="email" class="form__label">Email</label>
 			</div>
-			{#if hasEmailError}
-				<div class="full_error">
-					<p>{emailError}</p>
-				</div>
-			{/if}
 
-			<div class="form__group">
-				<input
-					type="password"
-					id="password"
-					class="form__input"
-					placeholder=""
-					autocomplete="off"
-					bind:value={password1}
-					required
-				/>
-				<label for="password" class="form__label">Password</label>
-			</div>
-			{#if hasPasswordError}
-				<div class="full_error">
-					<p>{passwordError}</p>
-				</div>
-			{/if}
 			<button class="form__button">Join</button>
 		</form>
 	</div>
@@ -198,6 +162,32 @@
 		margin: 0;
 		padding: 0;
 	}
+	.error-container {
+		position: fixed;
+		margin-top: 5px;
+		padding: 10px;
+		z-index: 1000;
+		background: rgba(0, 0, 0, 0.8);
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		transition: 2s ease;
+		.error-box {
+			display: flex;
+			gap: 1rem;
+			.errors {
+				h3 {
+					color: red;
+					font-size: 15px;
+				}
+			}
+			p {
+				color: white;
+				font-size: 25px;
+				cursor: pointer;
+				font-weight: bold;
+			}
+		}
+	}
 	.join-now {
 		font-family: monospace;
 		font-weight: 500;
@@ -207,7 +197,6 @@
 		align-items: center;
 		color: #c8a461;
 		padding: 20px;
-
 
 		.form {
 			width: 60rem;
@@ -226,7 +215,7 @@
 				-webkit-animation-fill-mode: forwards;
 				animation-fill-mode: forwards;
 				p {
-					display:flex;
+					display: flex;
 					align-items: center;
 					padding: 10px;
 					color: red;
@@ -238,7 +227,6 @@
 				gap: 1rem;
 				align-items: center;
 				transition: 1s ease;
-
 			}
 
 			.form__title {
@@ -301,13 +289,7 @@
 			}
 		}
 	}
-	.error-borders{
-		.form__group{
-			input{
-				border-color: red;
-			}
-		}
-	}
+
 	.join-bsiff {
 		padding-top: 30px;
 		.join-bsiff-container {
@@ -362,12 +344,12 @@
 			box-sizing: border-box;
 		}
 		.join-bsiff {
-			.join-now{
+			.join-now {
 				padding: 40px;
-			.form {
-				width: 35rem;
-				padding: 20px;
-			}
+				.form {
+					width: 35rem;
+					padding: 20px;
+				}
 			}
 			.join-bsiff-container {
 				.jbsiff-contents {
@@ -400,12 +382,12 @@
 	}
 	@media (max-width: 500px) {
 		.join-bsiff {
-			.join-now{
+			.join-now {
 				padding: 40px;
-			.form {
-				width: 25rem;
-				padding: 20px;
-			}
+				.form {
+					width: 25rem;
+					padding: 20px;
+				}
 			}
 			.join-bsiff-container {
 				.jbsiff-contents {

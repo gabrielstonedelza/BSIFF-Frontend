@@ -63,7 +63,7 @@
 			headers: { 'Content-Type': 'multipart/form-data' }
 		})
 			.then((response) => {
-				goto('/');
+				goto('/submit_success');
 			})
 			.catch((error) => {
 				if (error.response) {

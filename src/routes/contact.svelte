@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import Location from '../assets/images/icons/location-1.png';
 	import Email from '../assets/images/icons/mail.png';
 	import Phone from '../assets/images/icons/phone-call.png';
@@ -6,15 +7,80 @@
 	import Instagram from '../assets/images/icons/instagram.png';
 	import Twitter from '../assets/images/icons/twitter.png';
 	import Youtube from '../assets/images/icons/youtube.png';
+	import axios from 'axios';
+	import { goto } from '$app/navigation';
+
+	let first_name = '';
+	let last_name = '';
+	let phone = '';
+	let email = '';
+	let message = '';
+	let hasErrors = '';
+	let hasEmailError = false;
+	let emailError = '';
+	let hasPhoneError = false;
+	let phoneError = '';
+	let isPosting = true;
+
+	const handleErrorContainer = () => {
+		hasErrors = false;
+	};
+
+	const handleSubmitFile = async () => {
+		const apiUrl = 'http://127.0.0.1:8000/contact_us/';
+		axios({
+			method: 'POST',
+			url: apiUrl,
+			data: {
+				first_name: first_name,
+				last_name: last_name,
+				email: email,
+				mobile_num: phone,
+				message: message
+			},
+			headers: { 'Content-Type': 'multipart/form-data' }
+		})
+			.then((response) => {
+				goto('/success');
+			})
+			.catch((error) => {
+				if (error.response) {
+					console.log(error.response);
+					if (error.response.data['email']) {
+						hasErrors = true;
+						hasEmailError = true;
+						emailError = `${error.response.data['email']}`;
+					}
+					if (!error.response.data['email']) {
+						hasEmailError = false;
+						emailError = '';
+					}
+					if (error.response.data['mobile_num']) {
+						hasErrors = true;
+						hasPhoneError = true;
+						phoneError = `${error.response.data['mobile_num']}`;
+					}
+					if (!error.response.data['mobile_num']) {
+						hasPhoneError = false;
+						phoneError = '';
+					}
+				}
+			});
+	};
 </script>
 
 <svelte:head>
 	<title>BSIFF | Contact Us</title>
 </svelte:head>
 
-<section class="my-contact-form">
+<section
+	class="my-contact-form"
+	in:fly={{ y: 50, duration: 500, delay: 500 }}
+	out:fly={{ duration: 500 }}
+>
 	<div class="container">
 		<div class="contactInfo">
+			
 			<div>
 				<h2>Contact Information</h2>
 				<ul class="info">
@@ -65,34 +131,68 @@
 				</li>
 			</ul>
 		</div>
-		<div class="contactForm">
+		<form class="contactForm" on:submit|preventDefault={handleSubmitFile}>
+			{#if hasErrors}
+				<div class="error-container">
+					<div class="error-box">
+						<div class="errors">
+							{#if hasEmailError}
+								<h3>Email: {emailError}</h3>
+							{/if}
+							{#if hasPhoneError}
+								<h3>Mobile Number: {phoneError}</h3>
+							{/if}
+						</div>
+						<p on:click={handleErrorContainer}>X</p>
+					</div>
+				</div>
+			{/if}
 			<h2>Message Us</h2>
 			<div class="formBox">
 				<div class="inputBox w50">
-					<input type="text" name="" id="" required />
+					<input
+						type="text"
+						id="first_name"
+						class="form__input"
+						placeholder=""
+						autocomplete="off"
+						bind:value={first_name}
+						required
+					/>
 					<span>First Name</span>
 				</div>
 				<div class="inputBox w50">
-					<input type="text" name="" id="" required />
+					<input
+						id="last_name"
+						class="form__input"
+						placeholder=""
+						autocomplete="off"
+						bind:value={last_name}
+						required
+					/>
 					<span>Last Name</span>
 				</div>
 				<div class="inputBox w50">
-					<input type="email" name="" id="" required />
+					<input
+						id="email"
+						class="form__input"
+						placeholder=""
+						autocomplete="off"
+						bind:value={email}
+						required
+					/>
 					<span>Email</span>
 				</div>
-				<div class="inputBox w50">
-					<input type="text" name="" id="" required />
-					<span>Mobile Number</span>
-				</div>
+				
 				<div class="inputBox w100">
-					<textarea required />
+					<textarea required bind:value={message} />
 					<span>Write Your Message</span>
 				</div>
 				<div class="inputBox w100">
 					<input type="submit" value="Send" />
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </section>
 
@@ -103,6 +203,32 @@
 		padding: 0;
 	}
 	section {
+		.error-container {
+			position: fixed;
+			margin-top: 5px;
+			padding: 10px;
+			z-index: 1000;
+			background: rgba(0, 0, 0, 0.8);
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+			transition: 2s ease;
+			.error-box {
+				display: flex;
+				gap: 1rem;
+				.errors {
+					h3 {
+						color: red;
+						font-size: 15px;
+					}
+				}
+				p {
+					color: white;
+					font-size: 25px;
+					cursor: pointer;
+					font-weight: bold;
+				}
+			}
+		}
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -307,9 +433,9 @@
 	@media (max-width: 991px) {
 		section {
 			padding: 20px;
-	
+
 			.container {
-                z-index: 2;
+				z-index: 2;
 				padding: 20px;
 				display: flex;
 				flex-direction: column-reverse;
@@ -318,7 +444,7 @@
 					width: 100%;
 					height: auto;
 					border-radius: 0;
-                    padding-top: 20px;
+					padding-top: 20px;
 				}
 				.contactInfo {
 					border-radius: 0;
@@ -338,10 +464,10 @@
 	@media (max-width: 600px) {
 		section {
 			.container {
-                z-index: 2;
+				z-index: 2;
 				.contactForm {
 					padding: 25px;
-                
+
 					.formBox {
 						.inputBox.w50 {
 							width: 100%;

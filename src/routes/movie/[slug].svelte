@@ -21,8 +21,7 @@
 	import play from '../../assets/images/icons/play-button.png';
 
 	let playButtonClicked = false;
-	let canDownload = "nodownload"
-
+	let canDownload = 'nodownload';
 
 	const handlePlayButton = () => {
 		playButtonClicked = true;
@@ -30,6 +29,11 @@
 	const handleCloseVideoContainer = () => {
 		playButtonClicked = false;
 	};
+	let screeningDays = [7, 20, 21, 22, 23, 24, 25];
+
+	let today = new Date();
+	let tday = today.getDay();
+	let tmonth = today.getMonth() + 1;
 </script>
 
 <svelte:head>
@@ -43,8 +47,21 @@
 >
 	{#if playButtonClicked}
 		<section class="video-container">
-			<video controls controlsList={canDownload} autoplay="true" width="80%" height="80%" oncontextmenu="return false;">
-				<source src={movieDetail.get_movie_trailer} type="video/mp4" />
+			<!-- svelte-ignore a11y-media-has-caption -->
+			<video
+				controls
+				controlsList={canDownload}
+				autoplay="true"
+				width="80%"
+				height="80%"
+				oncontextmenu="return false;"
+			>
+			<source src={movieDetail.get_movie_trailer} type="video/mp4" />
+				<!-- {#if screeningDays.includes(7)}
+					<source src={movieDetail.get_full_movie} type="video/mp4" />
+				{:else}
+					<source src={movieDetail.get_movie_trailer} type="video/mp4" />
+				{/if} -->
 			</video>
 			<p class="closebut" on:click={handleCloseVideoContainer}>X</p>
 		</section>
@@ -177,6 +194,46 @@
 				font-size: 21px;
 				line-height: 1.1666666667;
 				letter-spacing: 0.009em;
+			}
+		}
+	}
+
+	@media (max-width: 688px) {
+		.movie-details {
+			.video-container {
+				.closebut {
+					color: #c8a461;
+					font-size: 20px;
+					cursor: pointer;
+					transition: ease 0.5s;
+					&:hover {
+						transform: rotate(90deg);
+					}
+				}
+			}
+			.txt-container {
+				.title-views {
+					h1 {
+						font-size: 20px;
+					}
+					img {
+						color: #c8a461 !important;
+						width: 20px;
+						height: 20px;
+					}
+				}
+				.play-button {
+					cursor: pointer;
+					img {
+						width: 40px;
+						height: 40px;
+					}
+				}
+				.description {
+					font-size: 15px;
+					line-height: 1.1666666667;
+					letter-spacing: 0.009em;
+				}
 			}
 		}
 	}

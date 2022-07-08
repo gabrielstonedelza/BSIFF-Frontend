@@ -2,7 +2,6 @@
 	export async function load({ fetch }) {
 		const res = await fetch('http://127.0.0.1:8000/get_all_submitted_film/');
 		const data = await res.json();
-	
 
 		if (res.ok) {
 			return {
@@ -10,9 +9,8 @@
 					selectedFilm: data
 				}
 			};
-		}
-		else{
-			console.error
+		} else {
+			console.error;
 		}
 	}
 </script>
@@ -24,6 +22,7 @@
 	import SocialMovies from '../components/SocialMedia.svelte';
 	export let selectedFilm;
 	import { fly } from 'svelte/transition';
+	
 </script>
 
 <svelte:head>
@@ -36,4 +35,3 @@
 	<SearchMovies />
 	<RamdomMovies movies={selectedFilm} />
 </section>
-
