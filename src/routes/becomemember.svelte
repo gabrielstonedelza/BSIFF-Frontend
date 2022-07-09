@@ -17,7 +17,7 @@
 	};
 
 	const handleSubmitForm = async (e) => {
-		const apiUrl = 'http://127.0.0.1:8000/join_bsiff/';
+		const apiUrl = 'https://rvci.xyz/join_bsiff/';
 		axios({
 			method: 'POST',
 			url: apiUrl,

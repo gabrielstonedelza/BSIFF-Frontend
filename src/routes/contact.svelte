@@ -27,7 +27,7 @@
 	};
 
 	const handleSubmitFile = async () => {
-		const apiUrl = 'http://127.0.0.1:8000/contact_us/';
+		const apiUrl = 'https://rvci.xyz/contact_us/';
 		axios({
 			method: 'POST',
 			url: apiUrl,

@@ -10,7 +10,7 @@
 	let hasUsernameError = false;
 
 	const handleSubmitFile = async () => {
-		const apiUrl = 'http://127.0.0.1:8000/auth/token/login/';
+		const apiUrl = 'https://rvci.xyz/auth/token/login/';
 		axios({
 			method: 'POST',
 			url: apiUrl,

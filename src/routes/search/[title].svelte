@@ -1,7 +1,7 @@
 <script context="module">
 	export async function load({ fetch,params }) {
 		const res = await fetch(
-			`http://127.0.0.1:8000/search_film?search=${params.title}`
+			`https://rvci.xyz/search_film?search=${params.title}`
 		);
 		const data = await res.json();
 		console.log(params);
