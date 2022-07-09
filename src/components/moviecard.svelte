@@ -14,9 +14,10 @@
 
 <style>
 	img {
+		/* display: block; */
 		width: 100%;
 		height: 30vh;
-		object-fit: cover;
+		/* object-fit: cover; */
 		border-radius: 1rem;
 		margin-bottom: 1rem;
 	}
