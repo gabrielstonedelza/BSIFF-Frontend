@@ -86,9 +86,11 @@
 		<small>
 			{movieDetail.duration} | {movieDetail.country}
 		</small>
-		<span class="play-button">
-			<img src={play} alt="" on:click={handlePlayButton} />
-		</span>
+		{#if movieDetail.get_movie_trailer}
+			<span class="play-button">
+				<img src={play} alt="" on:click={handlePlayButton} />
+			</span>
+		{/if}
 		<h3>Overview</h3>
 		<div class="description">
 			<p>
