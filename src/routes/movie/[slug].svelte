@@ -97,22 +97,30 @@
 				{movieDetail.description}
 			</p>
 		</div>
+		{#if movieDetail.producers}
 		<h3>Producers</h3>
 		<div class="producers">
 			{movieDetail.producers}
 		</div>
+		{/if}
+		{#if movieDetail.writers}
 		<h3>Writers</h3>
 		<div class="producers">
 			{movieDetail.writers}
 		</div>
+		{/if}
+		{#if movieDetail.directors}
 		<h3>Directors</h3>
 		<div class="producers">
 			{movieDetail.directors}
 		</div>
+		{/if}
+		{#if movieDetail.key_casts}
 		<h3>Key Casts</h3>
 		<div class="producers">
 			{movieDetail.key_casts}
 		</div>
+		{/if}
 	</div>
 	<br />
 </div>
